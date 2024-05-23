@@ -1,22 +1,21 @@
-package com.rahulraghuwanshi.androidplayground
+package com.rahulraghuwanshi.androidplayground.lifecycle
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.rahulraghuwanshi.androidplayground.lifecycle.ActivityOne
+import com.rahulraghuwanshi.androidplayground.R
 
-class MainActivity : AppCompatActivity() {
+class ActivityOne : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("MAJAMA", "MainActivity >> onCreate() called")
+        Log.d("MAJAMA", "ActivityOne >>onCreate() called")
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_one)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -24,42 +23,42 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.btn).setOnClickListener{
-            startActivity(Intent(this,ActivityOne::class.java))
+            startActivity(Intent(this,ActivityTwo::class.java))
         }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        Log.d("MAJAMA", "MainActivity >> onSaveInstanceState() called")
+        Log.d("MAJAMA", "ActivityOne >> onSaveInstanceState() called")
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        Log.d("MAJAMA", "MainActivity >> onRestoreInstanceState() called")
+        Log.d("MAJAMA", "ActivityOne >> onRestoreInstanceState() called")
     }
 
     override fun onStart() {
         super.onStart()
-        Log.d("MAJAMA", "MainActivity >> onStart() called")
+        Log.d("MAJAMA", "ActivityOne >> onStart() called")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d("MAJAMA", "MainActivity >> onResume() called")
+        Log.d("MAJAMA", "ActivityOne >> onResume() called")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d("MAJAMA", "MainActivity >> onPause() called")
+        Log.d("MAJAMA", "ActivityOne >> onPause() called")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d("MAJAMA", "MainActivity >> onStop() called")
+        Log.d("MAJAMA", "ActivityOne >> onStop() called")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("MAJAMA", "MainActivity >> onDestroy() called")
+        Log.d("MAJAMA", "ActivityOne >> onDestroy() called")
     }
 }
