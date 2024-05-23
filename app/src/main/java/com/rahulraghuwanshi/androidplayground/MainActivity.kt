@@ -1,4 +1,4 @@
-package com.rahulraghuwanshi.androidplaygroud
+package com.rahulraghuwanshi.androidplayground
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

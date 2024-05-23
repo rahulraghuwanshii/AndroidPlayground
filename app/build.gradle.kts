@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.rahulraghuwanshi.androidplaygroud"
+    namespace = "com.rahulraghuwanshi.androidplayground"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.rahulraghuwanshi.androidplaygroud"
+        applicationId = "com.rahulraghuwanshi.androidplayground"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
