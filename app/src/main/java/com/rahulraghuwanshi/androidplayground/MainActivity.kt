@@ -2,29 +2,31 @@ package com.rahulraghuwanshi.androidplayground
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
-import android.widget.Button
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.rahulraghuwanshi.androidplayground.databinding.ActivityMainBinding
 import com.rahulraghuwanshi.androidplayground.lifecycle.ActivityOne
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d("MAJAMA", "MainActivity >> onCreate() called")
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
-        findViewById<Button>(R.id.btn).setOnClickListener{
-            startActivity(Intent(this,ActivityOne::class.java))
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        setUpListeners()
+    }
+
+    private fun setUpListeners() {
+        binding.btnToOpenActivityOne.setOnClickListener {
+            startActivity(Intent(this, ActivityOne::class.java))
+        }
+        binding.btnToOpenViewModelActivity.setOnClickListener {
+            startActivity(Intent(this, ActivityOne::class.java))
         }
     }
 
