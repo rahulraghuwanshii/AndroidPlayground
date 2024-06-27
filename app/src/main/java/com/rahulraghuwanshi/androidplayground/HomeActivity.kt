@@ -6,15 +6,16 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.rahulraghuwanshi.androidplayground.databinding.ActivityMainBinding
 import com.rahulraghuwanshi.androidplayground.lifecycle.ActivityOne
+import com.rahulraghuwanshi.androidplayground.lifecycle_aware.old_method.LifecycleAwareActivity
 import com.rahulraghuwanshi.androidplayground.viewmodel.ViewModelActivity
 
-class ActivityA : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("MAJAMA", "Activity_A >> onCreate() called")
+        Log.d("MAJAMA", "HomeActivity >> onCreate() called")
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -23,46 +24,51 @@ class ActivityA : AppCompatActivity() {
     }
 
     private fun setUpListeners() {
-        binding.btnToOpenActivityOne.setOnClickListener {
-            startActivity(Intent(this, ActivityOne::class.java))
-        }
-        binding.btnToOpenViewModelActivity.setOnClickListener {
-            startActivity(Intent(this, ViewModelActivity::class.java))
+        with(binding){
+            btnToOpenActivityOne.setOnClickListener {
+                startActivity(Intent(this@HomeActivity, ActivityOne::class.java))
+            }
+            btnToOpenViewModelActivity.setOnClickListener {
+                startActivity(Intent(this@HomeActivity, ViewModelActivity::class.java))
+            }
+            btnToOpenLifeCycleAwareActivity.setOnClickListener {
+                startActivity(Intent(this@HomeActivity, LifecycleAwareActivity::class.java))
+            }
         }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        Log.d("MAJAMA", "Activity_A >> onSaveInstanceState() called")
+        Log.d("MAJAMA", "HomeActivity >> onSaveInstanceState() called")
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        Log.d("MAJAMA", "Activity_A >> onRestoreInstanceState() called")
+        Log.d("MAJAMA", "HomeActivity >> onRestoreInstanceState() called")
     }
 
     override fun onStart() {
         super.onStart()
-        Log.d("MAJAMA", "Activity_A >> onStart() called")
+        Log.d("MAJAMA", "HomeActivity >> onStart() called")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d("MAJAMA", "Activity_A >> onResume() called")
+        Log.d("MAJAMA", "HomeActivity >> onResume() called")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d("MAJAMA", "Activity_A >> onPause() called")
+        Log.d("MAJAMA", "HomeActivity >> onPause() called")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d("MAJAMA", "Activity_A >> onStop() called")
+        Log.d("MAJAMA", "HomeActivity >> onStop() called")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("MAJAMA", "Activity_A >> onDestroy() called")
+        Log.d("MAJAMA", "HomeActivity >> onDestroy() called")
     }
 }

@@ -29,7 +29,10 @@
             android:name=".lifecycle.ActivityOne"
             android:exported="false" />
         <activity
-            android:name=".ActivityA"
+            android:name=".lifecycle_aware.old_method.LifecycleAwareActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
