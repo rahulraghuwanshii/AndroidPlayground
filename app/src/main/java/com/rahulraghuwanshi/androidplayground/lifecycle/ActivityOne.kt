@@ -13,7 +13,7 @@ import com.rahulraghuwanshi.androidplayground.R
 class ActivityOne : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("MAJAMA", "ActivityOne >>onCreate() called")
+        Log.d("MAJAMA", "Activity_B >>onCreate() called")
         enableEdgeToEdge()
         setContentView(R.layout.activity_one)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -29,36 +29,36 @@ class ActivityOne : AppCompatActivity() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        Log.d("MAJAMA", "ActivityOne >> onSaveInstanceState() called")
+        Log.d("MAJAMA", "Activity_B >> onSaveInstanceState() called")
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        Log.d("MAJAMA", "ActivityOne >> onRestoreInstanceState() called")
+        Log.d("MAJAMA", "Activity_B >> onRestoreInstanceState() called")
     }
 
     override fun onStart() {
         super.onStart()
-        Log.d("MAJAMA", "ActivityOne >> onStart() called")
+        Log.d("MAJAMA", "Activity_B >> onStart() called")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d("MAJAMA", "ActivityOne >> onResume() called")
+        Log.d("MAJAMA", "Activity_B >> onResume() called")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d("MAJAMA", "ActivityOne >> onPause() called")
+        Log.d("MAJAMA", "Activity_B >> onPause() called")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d("MAJAMA", "ActivityOne >> onStop() called")
+        Log.d("MAJAMA", "Activity_B >> onStop() called")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("MAJAMA", "ActivityOne >> onDestroy() called")
+        Log.d("MAJAMA", "Activity_B >> onDestroy() called")
     }
 }

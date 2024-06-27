@@ -1,5 +1,6 @@
 package com.rahulraghuwanshi.androidplayground.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,6 +11,7 @@ class CounterViewModel: ViewModel() {
     val liveData: LiveData<Int> = _liveData
 
     init {
+        Log.d("MAJAMA", "CounterViewModel: init")
         _liveData.value = 0
     }
 
@@ -19,5 +21,10 @@ class CounterViewModel: ViewModel() {
 
     fun decrement() {
         _liveData.value = _liveData.value!! - 1
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        Log.d("MAJAMA", "onCleared() called of CounterViewModel")
     }
 }

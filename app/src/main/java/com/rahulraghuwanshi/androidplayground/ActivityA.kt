@@ -6,14 +6,15 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.rahulraghuwanshi.androidplayground.databinding.ActivityMainBinding
 import com.rahulraghuwanshi.androidplayground.lifecycle.ActivityOne
+import com.rahulraghuwanshi.androidplayground.viewmodel.ViewModelActivity
 
-class MainActivity : AppCompatActivity() {
+class ActivityA : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("MAJAMA", "MainActivity >> onCreate() called")
+        Log.d("MAJAMA", "Activity_A >> onCreate() called")
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -26,42 +27,42 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, ActivityOne::class.java))
         }
         binding.btnToOpenViewModelActivity.setOnClickListener {
-            startActivity(Intent(this, ActivityOne::class.java))
+            startActivity(Intent(this, ViewModelActivity::class.java))
         }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        Log.d("MAJAMA", "MainActivity >> onSaveInstanceState() called")
+        Log.d("MAJAMA", "Activity_A >> onSaveInstanceState() called")
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        Log.d("MAJAMA", "MainActivity >> onRestoreInstanceState() called")
+        Log.d("MAJAMA", "Activity_A >> onRestoreInstanceState() called")
     }
 
     override fun onStart() {
         super.onStart()
-        Log.d("MAJAMA", "MainActivity >> onStart() called")
+        Log.d("MAJAMA", "Activity_A >> onStart() called")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d("MAJAMA", "MainActivity >> onResume() called")
+        Log.d("MAJAMA", "Activity_A >> onResume() called")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d("MAJAMA", "MainActivity >> onPause() called")
+        Log.d("MAJAMA", "Activity_A >> onPause() called")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d("MAJAMA", "MainActivity >> onStop() called")
+        Log.d("MAJAMA", "Activity_A >> onStop() called")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("MAJAMA", "MainActivity >> onDestroy() called")
+        Log.d("MAJAMA", "Activity_A >> onDestroy() called")
     }
 }
