@@ -1,12 +1,11 @@
 package com.rahulraghuwanshi.androidplayground.coroutine
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
 import com.rahulraghuwanshi.androidplayground.databinding.ActivityCoroutineBinding
-import com.rahulraghuwanshi.androidplayground.databinding.ActivityMainBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class CoroutineActivity : AppCompatActivity() {
 
@@ -14,11 +13,17 @@ class CoroutineActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
 
         binding = ActivityCoroutineBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        lifecycleScope.launch(Dispatchers.IO) {
+            coroutine()
+        }
 
+    }
+
+    private suspend fun coroutine(): Unit?{
+        return null
     }
 }

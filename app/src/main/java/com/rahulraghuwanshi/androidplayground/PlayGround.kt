@@ -20,6 +20,11 @@ suspend fun api1(): Boolean {
     return true
 }
 
+class A{
+
+}
+
+
 suspend fun api2(): Boolean {
     delay(10.seconds)
     return true
@@ -46,16 +51,16 @@ suspend fun colelctionALl() = coroutineScope {
     println(x.first())
 }
 
-@OptIn(DelicateCoroutinesApi::class)
-fun main() = runBlocking<Unit>{
-
-    GlobalScope.launch {
-        println("Nothing >>Thread started: ${Thread.currentThread().name}")
-    }
-    launch(Dispatchers.IO) {
-        println("Dispatchers.IO >> Thread started: ${Thread.currentThread().name}")
-    }
-    launch(Dispatchers.Default) {
-        println("Dispatchers.Default >> Thread started: ${Thread.currentThread().name}")
-    }
-}
+//@OptIn(DelicateCoroutinesApi::class)
+//fun main() = runBlocking<Unit>{
+//
+//    GlobalScope.launch {
+//        println("Nothing >>Thread started: ${Thread.currentThread().name}")
+//    }
+//    launch(Dispatchers.IO) {
+//        println("Dispatchers.IO >> Thread started: ${Thread.currentThread().name}")
+//    }
+//    launch(Dispatchers.Default) {
+//        println("Dispatchers.Default >> Thread started: ${Thread.currentThread().name}")
+//    }
+//}
