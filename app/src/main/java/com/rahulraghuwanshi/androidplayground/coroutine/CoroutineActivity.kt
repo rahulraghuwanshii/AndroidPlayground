@@ -6,6 +6,7 @@ import androidx.lifecycle.lifecycleScope
 import com.rahulraghuwanshi.androidplayground.databinding.ActivityCoroutineBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class CoroutineActivity : AppCompatActivity() {
 
@@ -23,7 +24,11 @@ class CoroutineActivity : AppCompatActivity() {
 
     }
 
-    private suspend fun coroutine(): Unit?{
+    private suspend fun coroutine(): Unit? {
         return null
+    }
+
+    private suspend fun changeContext() = withContext(Dispatchers.IO) {
+
     }
 }
