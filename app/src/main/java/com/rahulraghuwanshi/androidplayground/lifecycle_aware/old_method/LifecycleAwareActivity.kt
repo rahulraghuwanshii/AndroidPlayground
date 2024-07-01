@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.rahulraghuwanshi.androidplayground.databinding.ActivityLifecycleAwareBinding
+import com.rahulraghuwanshi.androidplayground.lifecycle_aware.new_method.MyObserver
 
 class LifecycleAwareActivity : AppCompatActivity() {
 
@@ -19,6 +20,8 @@ class LifecycleAwareActivity : AppCompatActivity() {
 
         setupLifecycleListener()
         lifecycleListener.enable()
+
+        lifecycle.addObserver(MyObserver())
     }
 
     private fun setupLifecycleListener() {

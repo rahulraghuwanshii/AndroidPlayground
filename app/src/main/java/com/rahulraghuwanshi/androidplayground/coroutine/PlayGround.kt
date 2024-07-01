@@ -1,6 +1,10 @@
 package com.rahulraghuwanshi.androidplayground.coroutine
 
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlin.system.measureTimeMillis
 
@@ -27,3 +31,32 @@ suspend fun printTemperature() { // this function will take 2 seconds to execute
     delay(2000)
     println("30\u00b0C : ${System.currentTimeMillis()}")
 }
+
+//fun main() {
+//    runBlocking{
+//        val handler = CoroutineExceptionHandler { _, exception ->
+//            println("Exception thrown: ${exception.message}")
+//        }
+//
+//
+//        CoroutineScope(Dispatchers.IO).launch {
+//            println("Parent First coroutine")
+//
+//            launch(Dispatchers.IO + handler) {
+//                println("Child First coroutine")
+//
+//                launch {
+//                    println("Child Second coroutine")
+//
+//                    throw Exception("Exception thrown")
+//                    println("Child Second coroutineEnd")
+//                }
+//
+//                println("Child First coroutineEnd")
+//            }
+//
+//            println("Parent First coroutine end")
+//
+//        }
+//    }
+//}
